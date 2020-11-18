@@ -22,16 +22,41 @@ class Todos1 extends Component {
             error =>{
                 this.setState({error});
             }
-
-
         )
         console.log("Result = ", res);
         // this.setState({})
     }
-// function btn1()
-// {
-// document.getElementsByClassName("btn1").style.color = "green";
-// }
+
+handleDelete = ele =>{
+    let index = this.state.data.map(e=> e.username).indexOf(ele.username);
+    this.setState({
+        data : [
+            ...this.state.data.slice(0,index),
+            ...this.state.data.slice(index + 1)
+            ]
+        });
+}
+
+handleClick = ele =>{
+    console.log(ele);
+    let index = this.state.data.map(e => e.username).indexOf(ele.username);
+    this.setState({
+        data:[
+            ...this.state.data.slice(0,index),
+            {...ele, name: "Raj Kumar"},
+            ...this.state.data.slice(index + 1)
+        ]
+    });
+}
+
+handleChange = e =>{
+    this.setState({name:e.target.value});
+};
+handlesubmit = e => {
+    e.preventDefault();
+    this.setState({data: [...this.state.data, {name:this.state.name}]});
+}
+
     render() {
         console.log(this.state.data);
         return (
@@ -41,9 +66,16 @@ class Todos1 extends Component {
                     {
                         this.state.data &&
                         this.state.data.map(e =>{
-                        return <div key={e.id}>{e.title}
-                        <button className = "btn1" type = "button" onClick="btn1()">Completed</button>
-                        <button type = "button">Pending</button>
+                        return <div 
+                        key={e.id}
+                        className="main_div"
+                        >
+                            {e.title}
+                        <span className = "Todobutton">
+                        {/* <button className = "btn1" type = "button" onClick="btn1()">Completed</button> */}
+                        <button className = "btn1" type = "button" onClick={this.handleClick}>Update</button>
+                        <button className = "btn1" type = "button" onClick={this.handleDelete}>Delete</button>
+                        </span>
                         </div>
                         
                         })

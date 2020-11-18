@@ -10,7 +10,8 @@ class Todos2 extends Component {
     render() {
         return (
             <div className = "todos2">
-                <input type = "text" placeholder = "Add new element"/>
+                <input type = "text" 
+                placeholder = "Add new element"/>
                 <button type = "submit">Add</button>
                 <div>
                 <input type = "text" placeholder = "Search element"/>

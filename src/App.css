@@ -38,4 +38,31 @@
 }
 .btn1{
   /* background-color: chartreuse; */
+  border-radius: 5px;
+  border-color: black;
+  border-width: 2px;
+  font-weight: bold;
+}
+
+.todos1{
+ margin-right: 40%;
+ /* display:inline-flex; */
+ text-align:justify;
+}
+
+.Todobutton{
+float:right;
+/* text-align: right; */
+display:inline-flex;
+/* display:flex; */
+}
+
+.main_div{
+  background-color: lightgreen;
+  padding:1px;
+  border :none solid black;
+  /* border-color: green; */
+  margin:10px;
+  font-weight: bold;
+  border-radius: 8px;
 }

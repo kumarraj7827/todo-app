@@ -3,12 +3,12 @@ import './App.css';
 import Todos from "./Todos";
 import Todos1 from "./Todos1";
 import Todos2 from "./Todos2";
-
+import Counter from "./Counter";
 function App() {
   return (
     <div className="App">
       {/* <Todos /> */}
-      
+      <Counter />
       <Todos1 />
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
